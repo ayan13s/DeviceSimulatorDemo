@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.cell.ChoiceBoxListCell?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.cell.ComboBoxListCell?>
+
+<GridPane alignment="top_center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.ibm.iotdemo.DemoController">
+	<padding><Insets bottom="10" left="25" right="25" top="25" /></padding>
+	<children>
+
+   		<Text text="Welcome to IoT Device Security Demo" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+         <font>
+            <Font name="Lucida Calligraphy Italic" size="16.0" />
+         </font>
+		</Text>
+
+   		<Text text="Choose from one of the device types:" textAlignment="LEFT" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+   
+	    <fx:define>
+	        <ToggleGroup fx:id="deviceTypeGroup"/>
+	    </fx:define>
+
+		<RadioButton fx:id="rdoUidPwdDevice" mnemonicParsing="false" toggleGroup="$deviceTypeGroup" text="Device has ability for username/password authentication" GridPane.columnSpan="2" GridPane.rowIndex="4"  />
+		<RadioButton fx:id="rdoOtpDevice" mnemonicParsing="false" toggleGroup="$deviceTypeGroup" text="Device has ability for OTP authentication" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+		<RadioButton fx:id="rdoCertDevice" mnemonicParsing="false" toggleGroup="$deviceTypeGroup" text="Device has ability for certificate authentication" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+
+        <HBox alignment="bottom_right" prefHeight="25.0" prefWidth="105.0" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="8">
+        <children>
+      		<Button onAction="#handleStartButtonAction" style="-fx-background-color: blue; -fx-font-weight: bold;" text="Start the Device >" textFill="WHITE" />
+        </children>
+   		</HBox>
+   
+   		<Text fx:id="startActionStatus" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="9" />
+    
+   </children>
+   <columnConstraints>
+   </columnConstraints>
+   <rowConstraints>
+   </rowConstraints>
+ 
+</GridPane>

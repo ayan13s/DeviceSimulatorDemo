@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="335.0"
+	minWidth="600.0" prefHeight="335.0" prefWidth="600.0" alignment="center_left"
+	hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="com.ibm.iotdemo.DemoController">
+	<padding>
+		<Insets bottom="10" left="25" right="25" top="25" />
+	</padding>
+	<columnConstraints>
+		<ColumnConstraints hgrow="SOMETIMES" minWidth="60.0"
+			prefWidth="60.0" />
+		<ColumnConstraints hgrow="ALWAYS" minWidth="300.0"
+			prefWidth="300.0" />
+		<ColumnConstraints hgrow="SOMETIMES" minWidth="60.0"
+			prefWidth="60.0" />
+		<ColumnConstraints hgrow="SOMETIMES" minWidth="60.0"
+			prefWidth="60.0" />
+	</columnConstraints>
+	<rowConstraints>
+		<RowConstraints minHeight="20.0" prefHeight="20.0"
+			vgrow="NEVER" />
+		<RowConstraints minHeight="10.0" prefHeight="10.0"
+			vgrow="NEVER" />
+		<RowConstraints minHeight="60.0" prefHeight="60.0"
+			vgrow="NEVER" />
+		<RowConstraints minHeight="60.0" prefHeight="60.0"
+			vgrow="NEVER" />
+		<RowConstraints minHeight="60.0" prefHeight="60.0"
+			vgrow="NEVER" />
+		<RowConstraints minHeight="10.0" prefHeight="10.0"
+			vgrow="NEVER" />
+		<RowConstraints minHeight="20.0" prefHeight="20.0"
+			vgrow="NEVER" />
+	</rowConstraints>
+	<children>
+		<Text text="Welcome to IoT Device Security Demo"
+			GridPane.halignment="CENTER" GridPane.valignment="CENTER"
+			GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="0">
+			<font>
+				<Font name="Lucida Calligraphy Italic" size="16.0" />
+			</font>
+		</Text>
+
+		<ImageView fitHeight="50.0" fitWidth="50.0"
+			GridPane.halignment="CENTER" GridPane.rowIndex="2"
+			GridPane.valignment="CENTER">
+			<image>
+				<Image url="@../../../../resources/images/device1.png" />
+			</image>
+		</ImageView>
+		<ImageView fitHeight="50.0" fitWidth="50.0"
+			GridPane.halignment="CENTER" GridPane.rowIndex="3"
+			GridPane.valignment="CENTER">
+			<image>
+				<Image url="@../../../../resources/images/device2.png" />
+			</image>
+		</ImageView>
+		<ImageView fitHeight="50.0" fitWidth="60.0"
+			GridPane.halignment="CENTER" GridPane.rowIndex="4"
+			GridPane.valignment="CENTER">
+			<image>
+				<Image url="@../../../../resources/images/device3.png" />
+			</image>
+		</ImageView>
+		
+		<Text text="Device authentication based on User id / Password"
+			GridPane.halignment="LEFT" GridPane.valignment="CENTER"
+			GridPane.columnIndex="1" GridPane.rowIndex="2">
+			<font>
+				<Font size="14.0" />
+			</font>
+		</Text>
+		<Text text="Device authentication based on One Time Password (OTP)"
+			GridPane.halignment="LEFT" GridPane.valignment="CENTER"
+			GridPane.columnIndex="1" GridPane.rowIndex="3">
+			<font>
+				<Font size="14.0" />
+			</font>
+		</Text>
+		<Text text="Device authentication based on certificates"
+			GridPane.halignment="LEFT" GridPane.valignment="CENTER"
+			GridPane.columnIndex="1" GridPane.rowIndex="4">
+			<font>
+				<Font size="14.0" />
+			</font>
+		</Text>
+
+		<Button fx:id="buttonStartDeviceUidPwd" disable="true" mnemonicParsing="false"
+			onAction="#handleStartButton" style="-fx-background-color: transparent;"
+			GridPane.columnIndex="2" GridPane.rowIndex="2">
+			<graphic>
+				<ImageView fitHeight="50.0" fitWidth="50.0">
+					<image>
+						<Image url="@../../../../resources/images/start.png" />
+					</image>
+				</ImageView>
+			</graphic>
+		</Button>
+		<Button fx:id="buttonStartDeviceOtp" disable="true" mnemonicParsing="false"
+			onAction="#handleStartButton" style="-fx-background-color: transparent;"
+			GridPane.columnIndex="2" GridPane.rowIndex="3">
+			<graphic>
+				<ImageView fitHeight="50.0" fitWidth="50.0">
+					<image>
+						<Image url="@../../../../resources/images/start.png" />
+					</image>
+				</ImageView>
+			</graphic>
+		</Button>
+		<Button fx:id="buttonStartDeviceCert" disable="true" mnemonicParsing="false"
+			onAction="#handleStartButton" style="-fx-background-color: transparent;"
+			GridPane.columnIndex="2" GridPane.rowIndex="4">
+			<graphic>
+				<ImageView fitHeight="50.0" fitWidth="50.0">
+					<image>
+						<Image url="@../../../../resources/images/start.png" />
+					</image>
+				</ImageView>
+			</graphic>
+		</Button>
+		<Button fx:id="buttonStopDeviceUidPwd" disable="true"
+			onAction="#handleStopButton" mnemonicParsing="false" style="-fx-background-color: transparent;"
+			GridPane.columnIndex="3" GridPane.rowIndex="2">
+			<graphic>
+				<ImageView fitHeight="50.0" fitWidth="50.0">
+					<image>
+						<Image url="@../../../../resources/images/stop.png" />
+					</image>
+				</ImageView>
+			</graphic>
+		</Button>
+		<Button fx:id="buttonStopDeviceOtp" disable="true"
+			onAction="#handleStopButton" mnemonicParsing="false" style="-fx-background-color: transparent;"
+			GridPane.columnIndex="3" GridPane.rowIndex="3">
+			<graphic>
+				<ImageView fitHeight="50.0" fitWidth="50.0">
+					<image>
+						<Image url="@../../../../resources/images/stop.png" />
+					</image>
+				</ImageView>
+			</graphic>
+		</Button>
+		<Button fx:id="buttonStopDeviceCert" disable="true"
+			onAction="#handleStopButton" mnemonicParsing="false" style="-fx-background-color: transparent;"
+			GridPane.columnIndex="3" GridPane.rowIndex="4">
+			<graphic>
+				<ImageView fitHeight="50.0" fitWidth="50.0">
+					<image>
+						<Image url="@../../../../resources/images/stop.png" />
+					</image>
+				</ImageView>
+			</graphic>
+		</Button>
+
+		<Label text="Device will be authenticated using built-in certificate." GridPane.columnIndex="1"
+			GridPane.rowIndex="6" />
+
+		<Button onAction="#handleAuthButtonAction" GridPane.valignment="BOTTOM" GridPane.rowSpan="3"
+			style="-fx-background-color: transparent;" GridPane.columnIndex="2" GridPane.rowIndex="5">
+			<graphic>
+				<ImageView fitHeight="50.0" fitWidth="50.0">
+					<image>
+						<Image url="@../../../../resources/images/check-mark.png" />
+					</image>
+				</ImageView>
+			</graphic>
+		</Button>
+
+   		<Text fx:id="submitActionStatus" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.halignment="RIGHT" GridPane.rowIndex="8" />
+		
+   </children>
+ 
+</GridPane>
