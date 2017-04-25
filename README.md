@@ -11,5 +11,5 @@ Following steps should be followed to run the program.
 3. Update DeviceConfig/device.conf file with respective Watson IOT Platform settings and security options. Security options should be in sync with Broker app security options(example - if OTP is enabledin device app then it should be enabled in broker app as well).
 4. Run the com.ibm.iotdemo.Main class program to get the starting menu.
 
-Please find the associated developerworks article at the below link - 
+Please find the associated developerworks article at - 
 https://www.ibm.com/developerworks/library/iot-trs-secure-iot-solutions2/
